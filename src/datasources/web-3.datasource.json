@@ -1,0 +1,6 @@
+{
+  "name": "Web3",
+  "connector": "@gdbc/loopback-connector-web3",
+  "provider": "ws://localhost:8545",
+  "debug": true
+}

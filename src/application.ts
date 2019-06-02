@@ -1,0 +1,46 @@
+import { BootMixin } from '@loopback/boot';
+import { ApplicationConfig } from '@loopback/core';
+import {
+  RestExplorerBindings,
+  RestExplorerComponent,
+} from '@loopback/rest-explorer';
+import { RepositoryMixin } from '@loopback/repository';
+import { RestApplication } from '@loopback/rest';
+import { ServiceMixin } from '@loopback/service-proxy';
+import * as path from 'path';
+import { MySequence } from './sequence';
+import { WEB3_PROVIDER } from './keys';
+import { Web3Provider } from './providers/web3.provider';
+
+export class LoopbackWeb3ExampleApplication extends BootMixin(
+  ServiceMixin(RepositoryMixin(RestApplication)),
+) {
+  constructor(options: ApplicationConfig = {}) {
+    super(options);
+
+    // Set up the custom sequence
+    this.sequence(MySequence);
+
+    // Set up default home page
+    this.static('/', path.join(__dirname, '../public'));
+
+    // Customize @loopback/rest-explorer configuration here
+    this.bind(RestExplorerBindings.CONFIG).to({
+      path: '/explorer',
+    });
+    this.component(RestExplorerComponent);
+
+    this.bind(WEB3_PROVIDER).toProvider(Web3Provider);
+
+    this.projectRoot = __dirname;
+    // Customize @loopback/boot Booter Conventions here
+    this.bootOptions = {
+      controllers: {
+        // Customize ControllerBooter Conventions here
+        dirs: ['controllers'],
+        extensions: ['.controller.js'],
+        nested: true,
+      },
+    };
+  }
+}
