@@ -1,5 +1,14 @@
 # loopback-web3-example
 
+```bash
+npm install
+npm start
+```
+
+## Dependencies:
+
+[@gdbc/loopback-connector-web3](https://www.npmjs.com/package/@gdbc/loopback-connector-web3)
+
 ## How I did it:
 ### Steps:
 1. Initialize repository with
@@ -106,3 +115,6 @@ export class Web3Controller {
   }
 }
 ```
+
+
+### Truffle

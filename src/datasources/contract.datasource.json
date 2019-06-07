@@ -1,0 +1,75 @@
+{
+  "name": "Contract",
+  "connector": "@gdbc/loopback-connector-contract-web3",
+  "provider": "ws://localhost:9545",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "state",
+          "type": "uint256"
+        },
+        {
+          "name": "dataHash",
+          "type": "uint256"
+        }
+      ],
+      "name": "setHash",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "state",
+          "type": "uint256"
+        }
+      ],
+      "name": "getHash",
+      "outputs": [
+        {
+          "name": "dataHash",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "getHashArray",
+      "outputs": [
+        {
+          "name": "dataHash",
+          "type": "uint256[4]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "address": "0x8B281A085F341d229d69BbA49D4e84917f9C79a7",
+  "options": {
+    "defaultAccount": "0x8dbe6804b175977a387cba724ef3fc0f2fd39212"
+  }
+}
