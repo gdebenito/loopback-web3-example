@@ -1,7 +1,7 @@
 {
   "name": "Contract",
   "connector": "@gdbc/loopback-connector-contract-web3",
-  "provider": "ws://localhost:9545",
+  "provider": "http://localhost:9545",
   "abi": [
     {
       "constant": false,
@@ -70,6 +70,10 @@
   ],
   "address": "0x8B281A085F341d229d69BbA49D4e84917f9C79a7",
   "options": {
-    "defaultAccount": "0x8dbe6804b175977a387cba724ef3fc0f2fd39212"
+    "defaultAccount": "0x8DBe6804b175977a387CbA724Ef3fc0F2FD39212"
+  },
+  "mnemonic": {
+    "method": "raw",
+    "value": "hospital nature toy kitchen cook pull blush little amount develop welcome over"
   }
 }

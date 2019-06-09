@@ -47,7 +47,7 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@gdbc/loopback-connector-contract-web3": "0.0.7",
+    "@gdbc/loopback-connector-contract-web3": "0.0.17",
     "@gdbc/loopback-connector-web3": "0.0.4",
     "@loopback/boot": "^1.2.8",
     "@loopback/context": "^1.16.0",
