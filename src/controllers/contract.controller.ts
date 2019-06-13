@@ -5,9 +5,7 @@ import { get, param, post } from '@loopback/rest';
 export class ContractController {
   constructor(
     @inject(CONTRACT_PROVIDER) protected connector: any,
-  ) {
-    console.log('llegué')
-  }
+  ) { }
 
 
   @get('/contract/accounts')
@@ -44,6 +42,5 @@ export class ContractController {
 
   // @get('contract/getHashArray')
 
-  // @get('contract/setHash')
 
 }

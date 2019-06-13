@@ -9,7 +9,6 @@ import { RestApplication } from '@loopback/rest';
 import { ServiceMixin } from '@loopback/service-proxy';
 import * as path from 'path';
 import { MySequence } from './sequence';
-import { WEB3_PROVIDER, CONTRACT_PROVIDER } from './keys';
 import { Web3Provider } from './providers/web3.provider';
 import { ContractProvider } from './providers/contract.provider';
 
@@ -31,8 +30,8 @@ export class LoopbackWeb3ExampleApplication extends BootMixin(
     });
     this.component(RestExplorerComponent);
 
-    this.bind(WEB3_PROVIDER).toProvider(Web3Provider);
-    this.bind(CONTRACT_PROVIDER).toProvider(ContractProvider);
+    this.serviceProvider(ContractProvider);
+    this.serviceProvider(Web3Provider);
 
     this.projectRoot = __dirname;
     // Customize @loopback/boot Booter Conventions here
@@ -43,6 +42,7 @@ export class LoopbackWeb3ExampleApplication extends BootMixin(
         extensions: ['.controller.js'],
         nested: true,
       },
+
     };
   }
 }
